@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+        <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Title</th>
+        <th scope="col">Created By</th>
+        <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for visitor in visitormodel_list %}
+    <tr>
+      <th scope="row">{{ visitor.pk }}</th>
+      <td>{{visitor.name}}</td>
+      <td>{{visitor.email}}</td>
+      <td>{{ visitor.title }}</td>
+      <td>{{ visitor.created_by.username }}</td>
+        <td><a class="btn btn-warning" href="{% url 'visitors:update' pk=visitor.pk %}">Update!</a> <a class="btn btn-danger" href="{% url 'visitors:delete' pk=visitor.pk %}">Delete!</a></td>
+
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

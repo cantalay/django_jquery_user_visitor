@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to User List Page!</h1>
+        <p class="lead">Please click userList from navbar.</p>
+        <hr class="my-4">
+        <p>Or only ;</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'visitors:list' %}" role="button">Click Me!</a>
+    </div>
+
+{% endblock %}
