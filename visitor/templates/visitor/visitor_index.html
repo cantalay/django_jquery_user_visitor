@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h3>USERS</h3>
+                <table class="table table-striped" id="myTable">
+                    <thead>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>title</th>
+                    <th>Title</th>
+                    <th>Actions</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create Visitor!
+        </button>
+    </div>
+
+    {% include 'visitor/_update_modal.html' %}
+    {% include 'visitor/_delete_modal.html' %}
+    {% include 'visitor/_create_modal.html' %}
+
+    {% csrf_token %}
+    <script src="{% static 'js/app.js' %}"></script>
+{% endblock %}

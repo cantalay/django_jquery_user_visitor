@@ -1,3 +1,11 @@
 body{
     font-family: 'Sulphur Point', sans-serif;
 }
+
+.popup-overlay {
+visibility:hidden;
+}
+
+.popup-content {
+visibility:hidden;
+}
